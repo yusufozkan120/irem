@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İrem ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+color:white;
+background:linear-gradient(rgba(255,105,180,0.4),rgba(0,191,255,0.4)),
+url('https://i.ibb.co/PvXPFngD/MG-20260119-WA0006.jpg') no-repeat center center/cover;
+}
+
+.container{
+background:rgba(0,0,0,0.7);
+padding:40px 20px;
+min-height:100vh;
+}
+
+h1{
+font-size:45px;
+background:linear-gradient(to right,#ff69b4,#00bfff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:linear-gradient(to right,#ff69b4,#00bfff);
+color:white;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+button:hover{transform:scale(1.1);}
+
+.hidden{display:none;}
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh);}
+}
+
+.bigHeart{
+font-size:70px;
+animation:spin 4s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotateY(0deg);}
+to{transform:rotateY(360deg);}
+}
+
+.romanticText{
+font-size:22px;
+animation:fadeIn 3s forwards;
+opacity:0;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="lockScreen">
+<h1>💌 Bu Sayfa Sadece İrem İçin 💖</h1>
+<button onclick="startSurprise()">Sürprizi Aç 💕</button>
+</div>
+
+<div id="mainContent" class="hidden">
+<h1>💖 İrem 💙</h1>
+<p>Benimle Evlenir misin? 💍</p>
+
+<button onclick="celebrate()">Evet 💖</button>
+<button id="noBtn" onmouseover="moveButton()">Hayır 😜</button>
+
+<div id="result"></div>
+</div>
+
+</div>
+
+<audio id="bgMusic" loop>
+<source src="https://files.catbox.moe/ltjz2p.m4a" type="audio/m4a">
+</audio>
+
+<script>
+
+function startSurprise(){
+document.getElementById("lockScreen").classList.add("hidden");
+document.getElementById("mainContent").classList.remove("hidden");
+document.getElementById("bgMusic").play();
+setInterval(createHeart,300);
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="💖💙";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},5000);
+}
+
+function moveButton(){
+const btn=document.getElementById("noBtn");
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+
+function celebrate(){
+document.getElementById("result").innerHTML=
+`<div class="bigHeart">💖 İrem ❤️ Yusuf 💖</div>
+<div class="romanticText">
+Sonsuza kadar seninle olmak istiyorum 💍<br>
+Seni her şeyden çok seviyorum İrem 💞
+</div>`;
+
+for(let i=0;i<
